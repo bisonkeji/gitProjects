@@ -1,0 +1,24 @@
+{
+
+    "autoload": {
+
+        "classmap": [
+
+            "./"
+
+        ]
+
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.laravel-china.org"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.5"
+    },
+    "require": {
+        "monolog/monolog": "^1.24"
+    }
+}
