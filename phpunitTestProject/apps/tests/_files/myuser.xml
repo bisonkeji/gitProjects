@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <test.user id="2" name="hugee2" />
+  <mydata.user id="1" name="hugee3" />
+  <mydata.user id="2" name="hugee2" />
+</dataset>
