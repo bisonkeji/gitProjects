@@ -1,0 +1,10 @@
+this is test use for web server headerInfoArray
+(
+    [Connection] => close
+    [Expect] => 100-continue
+    [Content-Length] => 31
+    [X-Bs-Ad] => private
+    [Content-Type] => text/xml;charset=UTF-8
+    [Accept] => */*
+    [Host] => 127.0.0.1
+)
