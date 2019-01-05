@@ -1,0 +1,87 @@
+<?php
+require_once "../dbconnect/Db.php";
+require_once "./_files/DatabaseTestUtility.php";
+require_once "./_files/testDbConnect.php";
+require_once "../business/UPdata.php";
+require_once "../business/Common.php";
+require_once "../business/myFixteure.php";
+
+// require_once "../../../../autoload.php";
+use PHPUnit\DbUnit\Database\DefaultConnection;
+use PHPUnit\DbUnit\DataSet\CompositeDataSet;
+use PHPUnit\DbUnit\DataSet\DefaultDataSet;
+use PHPUnit\DbUnit\DataSet\DefaultTable;
+use PHPUnit\DbUnit\DataSet\DefaultTableMetadata;
+use PHPUnit\DbUnit\DataSet\FlatXmlDataSet;
+use PHPUnit\DbUnit\Operation\Truncate;
+use PHPUnit\DbUnit\TestCase;
+
+//equire_once \dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'DatabaseTestUtility.php';
+require_once "./_files/DatabaseTestUtility.php";
+class OperationsMysqltest extends TestCase
+{
+    protected function setUp(): void
+    {
+        if (!\extension_loaded('pdo_mysql')) {
+            $this->markTestSkipped('pdo_mysql is required to run this test.');
+        }
+
+        if (!\defined('PHPUNIT_TESTSUITE_EXTENSION_DATABASE_MYSQL_DSN')) {
+            $this->markTestSkipped('No MySQL server configured for this test.');
+        }
+
+        parent::setUp();
+    }
+
+    public function getConnection()
+    {
+        return new DefaultConnection(DBUnitTestUtility::getMySQLDB(), 'mysql');
+    }
+
+    public function getDataSet()
+    {
+        return new FlatXmlDataSet(__DIR__ . '/_files/myuser.xml');
+    }
+
+    public function testSql()
+    {
+        // $id = 1;
+        // $name = 'name1';
+        // $getCount = $this->getConnection()
+        // ->getRowCount('mydata.user','id='.$id.' and name="'.$name.'"');
+        // $this->assertEquals(1, $getCount);
+
+        $id = 1;
+        $name = 'name1_1';
+        
+        //执行操作
+        User::updata($id ,$name);
+
+        $getCount = $this->getConnection()
+        ->getRowCount('mydata.user','id='.$id.' and name="'.$name.'"');
+
+        $this->assertEquals(1, $getCount);
+
+    }
+
+    public function testSql2()
+    {
+        $id = 1;
+        $name = 'name1';
+        
+        //执行操作
+
+        $getCount = $this->getConnection()
+        ->getRowCount('mydata.user','id='.$id.' and name="'.$name.'"');
+
+        $this->assertEquals(1, $getCount);
+    }
+
+
+    
+
+
+
+    
+
+}

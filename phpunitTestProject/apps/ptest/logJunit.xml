@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Ptest1" file="C:\phpStudy\PHPTutorial\WWW\gitProjects\phpunitTestProject\apps\ptest\Ptest1.php" tests="5" assertions="6" errors="0" failures="0" skipped="0" time="0.000768">
+    <testcase name="testSum" class="Ptest1" classname="Ptest1" file="C:\phpStudy\PHPTutorial\WWW\gitProjects\phpunitTestProject\apps\ptest\Ptest1.php" line="22" assertions="2" time="0.000314"/>
+    <testsuite name="Ptest1::testSum2" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.000454">
+      <testcase name="testSum2 with data set #0" class="Ptest1" classname="Ptest1" file="C:\phpStudy\PHPTutorial\WWW\gitProjects\phpunitTestProject\apps\ptest\Ptest1.php" line="32" assertions="1" time="0.000126"/>
+      <testcase name="testSum2 with data set #1" class="Ptest1" classname="Ptest1" file="C:\phpStudy\PHPTutorial\WWW\gitProjects\phpunitTestProject\apps\ptest\Ptest1.php" line="32" assertions="1" time="0.000116"/>
+      <testcase name="testSum2 with data set #2" class="Ptest1" classname="Ptest1" file="C:\phpStudy\PHPTutorial\WWW\gitProjects\phpunitTestProject\apps\ptest\Ptest1.php" line="32" assertions="1" time="0.000106"/>
+      <testcase name="testSum2 with data set #3" class="Ptest1" classname="Ptest1" file="C:\phpStudy\PHPTutorial\WWW\gitProjects\phpunitTestProject\apps\ptest\Ptest1.php" line="32" assertions="1" time="0.000106"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

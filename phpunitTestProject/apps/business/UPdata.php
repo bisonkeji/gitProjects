@@ -4,12 +4,20 @@ require_once "../dbconnect/Db.php";
 use apps\dbconnect\Db;
 class User
 {
-    function updata($id ,$name)
+    static function updata($id ,$name)
     {
         $db = Db::connect();
-        $sql = "update test.user set name='".$name."' where id=".$id;
+        $sql = "update mydata.user set name='".$name."' where id=".$id;
         $ret = $db->exec($sql);
     }
+
+    static function insert($id ,$name)
+    {
+        $db = Db::connect();
+        $sql = "insert into mydata.user select $id,'$name'";
+        $ret = $db->exec($sql);
+    }
+
 
 }
 
