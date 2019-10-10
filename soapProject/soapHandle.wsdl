@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<definitions name="myService" targetNamespace="urn:myService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:myService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<types xmlns="http://schemas.xmlsoap.org/wsdl/" />
+<portType name="myServicePort"><operation name="strtolink">
+<input message="tns:strtolinkRequest" />
+<output message="tns:strtolinkResponse" />
+</operation>
+<operation name="add">
+<input message="tns:addRequest" />
+<output message="tns:addResponse" />
+</operation>
+</portType>
+<binding name="myServiceBinding" type="tns:myServicePort">
+<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+<operation name="strtolink">
+<soap:operation soapAction="urn:myService#soapHandle#strtolink" />
+<input><soap:body use="encoded" namespace="urn:myService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:myService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+<operation name="add">
+<soap:operation soapAction="urn:myService#soapHandle#add" />
+<input><soap:body use="encoded" namespace="urn:myService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:myService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+</binding>
+<service name="myService">
+<documentation />
+<port name="myServicePort" binding="tns:myServiceBinding"><soap:address location="http://127.0.0.1:80/myGitProject/gitProjects/soapProject/service.php" />
+</port>
+</service>
+<message name="strtolinkRequest">
+<part name="url" type="xsd:string" />
+</message>
+<message name="strtolinkResponse">
+<part name="strtolink" type="xsd:string" />
+</message>
+<message name="addRequest">
+<part name="a" type="xsd:string" />
+<part name="b" type="xsd:string" />
+</message>
+<message name="addResponse">
+<part name="add" type="xsd:string" />
+</message>
+</definitions>
